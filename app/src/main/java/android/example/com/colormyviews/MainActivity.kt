@@ -1,5 +1,6 @@
 package android.example.com.colormyviews
 
+import android.example.com.colormyviews.databinding.ActivityMainBinding
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,12 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import android.example.com.colormyviews.ui.theme.ColorMyViewsTheme
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 
 class MainActivity : AppCompatActivity() {
 
-    //private lateinit var binding :
+    private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
     }
 }
